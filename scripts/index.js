@@ -28,10 +28,7 @@ const createFilter = () => {
   const map = {
     qr: { method: '2d', type: 'qr_code' },
     ir: { method: 'ir', type: 'image' },
-    other: { method: 'digimarc', type: 'gs1:01' , imageConversion: {
-      greyscale: false,
-      exportFormat: 'image/jpeg'
-    }},
+    other: { method: 'digimarc', type: 'gs1:01'}
   };
   return map[UI.selectMethod.value];
 };
@@ -45,6 +42,10 @@ const startCamera = () => {
   const app = new EVT.App(UI.inputApiKey.value);
   app.scanStream({
     filter: createFilter(),
+    imageConversion: {
+      greyscale: false,
+      exportFormat: 'image/jpeg'
+    },
     containerId: 'stream_container',
   })
   .then((res) => {
