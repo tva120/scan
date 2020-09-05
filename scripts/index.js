@@ -26,7 +26,7 @@ const getQueryParam = (key) => {
 
 const createFilter = () => {
   const map = {
-    qr: { method: '2d', type: 'qr_code' },
+    qr: { method: '2d', type: 'dm' },
     ir: { method: 'ir', type: 'image' },
     other: { method: 'digimarc', type: 'gs1:01'}
   };
