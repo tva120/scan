@@ -28,7 +28,10 @@ const createFilter = () => {
   const map = {
     qr: { method: '2d', type: 'qr_code' },
     ir: { method: 'ir', type: 'image' },
-    other: { method: 'digimarc', type: 'gs1:01' },
+    other: { method: 'digimarc', type: 'gs1:01' , imageConversion: {
+      greyscale: false,
+      exportFormat: 'image/jpeg'
+    }},
   };
   return map[UI.selectMethod.value];
 };
