@@ -26,9 +26,11 @@ const getQueryParam = (key) => {
 
 const createFilter = () => {
   const map = {
-    qr: { method: '2d', type: 'dm' },
+    qr: { method: '2d', type: 'qr_code' },
+    dm: { method: '2d', type: 'dm' },
     ir: { method: 'ir', type: 'image' },
-    other: { method: 'digimarc', type: 'gs1:01'}
+    other: { method: 'digimarc', type: 'gs1:01'},
+    other2: { method: 'digimarc', type: 'serialized'}
   };
   return map[UI.selectMethod.value];
 };
