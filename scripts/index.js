@@ -44,10 +44,10 @@ const startCamera = () => {
   const app = new EVT.App(UI.inputApiKey.value);
   app.scanStream({
     filter: createFilter(),
-    imageConversion: {
+   /* imageConversion: {
       greyscale: false,
       exportFormat: 'image/jpeg'
-    },
+    },*/
     containerId: 'stream_container',
   })
   .then((res) => {
